@@ -1,0 +1,25 @@
+﻿@model  MatchViewModel
+
+<tr>
+    <td class="text-info">
+        @Html.DisplayFor(model => model.Date)
+    </td>
+    <td>
+        <a asp-area="" asp-controller="Statistics" asp-action="Team" asp-route-id="@Model.HomeTeamId">
+            @Model.HomeTeam
+        </a>
+    </td>
+    <td>
+        <a asp-controller="Teams" asp-action="Details" asp-route-id="@Model.GuestTeamId">
+            @Model.GuestTeam
+        </a>
+    </td>
+    <td class="text-success text-center">
+        @Model.Score
+    </td>
+    <td>
+        <form asp-area="Administration" asp-controller="Matches" asp-action="Delete" asp-route-id=@Model.Id asp-route-returnUrl="@Url.Action("Index", "Matches", new { })" method="post">
+            <button type="submit" class="btn btn-danger">Delete</button>
+        </form>
+    </td>
+</tr>

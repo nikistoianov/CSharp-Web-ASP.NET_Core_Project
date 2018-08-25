@@ -1,0 +1,18 @@
+﻿@model TeamViewModel
+
+<tr>
+    <td>
+        <a asp-controller="Teams" asp-action="Details" asp-route-id="@Model.Id">
+            @Model.Name
+        </a>
+    </td>
+    <td class="text-info">
+        @Model.GroupName
+    </td>
+    <td>
+        <form asp-area="Administration" asp-controller="Teams" asp-action="Delete" asp-route-id=@Model.Id asp-route-returnUrl="@Url.Action("Index", "Teams", new { })" method="post">
+            <button type="submit" class="btn btn-danger">Delete</button>
+        </form>
+    </td>
+</tr>
+

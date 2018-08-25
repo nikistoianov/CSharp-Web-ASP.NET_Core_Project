@@ -1,0 +1,30 @@
+﻿@model ScoreBetViewModel
+
+@if (Model.Hidden)
+{
+    <td class="column100 nomatch">hidden</td>
+}
+else
+{
+    if (Model.Current)
+    {
+        <td class="column100" data-column="column2">
+            @if (Model.Score == Constants.NO_SCORE)
+            {
+                <a asp-controller="BetsMatch" asp-action="Create" asp-route-id="@Model.MatchId" asp-route-returnUrl="@Context.Request.Path" 
+                   class="btn resultbtn @Model.ClassName">@Model.Score</a>
+            }
+            else
+            {
+                <a asp-controller="BetsMatch" asp-action="Edit" asp-route-id="@Model.Id" asp-route-returnUrl="@Context.Request.Path" 
+                   class="btn resultbtn @Model.ClassName">@Model.Score</a>
+            }
+        
+        </td>
+    }
+    else
+    {
+        <td class="column100 @Model.ClassName" data-column="column2">@Model.Score</td>
+    }
+}
+

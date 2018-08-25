@@ -1,0 +1,23 @@
+﻿@model IEnumerable<TeamViewModel>
+@{
+    ViewData["Title"] = "Teams";
+}
+
+<h2>List of teams</h2>
+<div asp-validation-summary="All" class="text-danger"></div>
+<table class="table table-striped table-hover">
+    <thead>
+        <tr>
+            <th class="col-sm-6">Name</th>
+            <th class="col-sm-4">Group</th>
+            <th class="col-sm-2"></th>
+        </tr>
+    </thead>
+    <tbody class="table__body">
+        @Html.DisplayForModel()
+    </tbody>
+</table>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

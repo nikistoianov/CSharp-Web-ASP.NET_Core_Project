@@ -1,0 +1,40 @@
+﻿@{
+    ViewData["Title"] = "Rules";
+}
+
+<h3>Company competition &mdash; World Cup &ldquo; Russia 2018 &rdquo;</h3>
+<br />
+
+<div class="container table__body">
+    <ol>
+        <li><strong>Rules</strong></li>
+    </ol>
+    <dl>
+        <dd> - Everyone who enters the competition must give a prognosis for each of the games in the World Cup.</dd>
+        <dd> - The prognosis must be given no later than a day before the beginning of each game.</dd>
+        <dd> - If a participant does not provide a prognosis for a particular game he does not receive any points for it.</dd>
+        <dd> - In the cases where the winner is decided by penalties the final result of the game is the one before the start of the penalties (usually a draw).</dd>
+        <dd> - No later than 1 day before the World Cup each participant must provide his/her prognosis for the Group phase rankings.</dd>
+        <dd> - Each participant must pay an entrance fee of 5 BGN.</dd>
+        <dd> - The winner of the contest will be the participant with the highest total number of points and he/she will receive a cash prize(the sum of all the entrances fees).</dd>
+    </dl>
+    <ol start="2">
+        <li><strong>Point system</strong></li>
+    </ol>
+    <ul>
+        <li> - For each of the games the participant who guesses the final result will win <strong class="text-danger">@Constants.POINTS_MATCH_BIG_SCORE</strong> points.</li>
+        <li> - If the final result of the game was not guessed correctly, but the outcome was the participant will win <strong class="text-danger">@Constants.POINTS_MATCH_SMALL_SCORE</strong> point.</li>
+        <li> - For each round of games the participant with the most points in that round will win a bonus of <strong class="text-danger">@Constants.POINTS_BONUS</strong> points.</li>
+        <li> - After the Group phase everyone who guessed the exact ranking of each of the teams in the groups will win points as follows:</li>
+    </ul>
+    <div class="container">
+        <p>1 place &ndash; <strong  class="text-danger">@Constants.POINTS_GROUP_1</strong> points.</p>
+        <p>2 place &ndash; <strong  class="text-danger">@Constants.POINTS_GROUP_2</strong> points.</p>
+        <p>3 place &ndash; <strong  class="text-danger">@Constants.POINTS_GROUP_3</strong> points.</p>
+        <p>4 place &ndash; <strong  class="text-danger">@Constants.POINTS_GROUP_4</strong> point.</p>
+    </div>
+
+
+</div>
+
+

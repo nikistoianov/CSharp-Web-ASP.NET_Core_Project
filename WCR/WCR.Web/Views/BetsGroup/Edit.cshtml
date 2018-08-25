@@ -1,0 +1,29 @@
+﻿@model BetGroupBindingModel
+@{
+    ViewData["Title"] = "Edit Group Bet";
+}
+
+<div class="container container-details body-content table__body span=8 offset=2">
+    <div asp-validation-summary="All" class="text-danger"></div>
+    <div class="well">
+        <form class="form-horizontal navbar__title" method="post">
+            <fieldset>
+                <legend>Edit Prognosis</legend>
+
+                @Html.EditorFor(model => model.Teams)
+
+                <div class="form-group">
+                    <div class="col-sm-7 col-sm-offset-4">
+                        <a href="@Context.Request.Query["returnUrl"]" class="btn btn-default">Cancel</a>
+                        <button type="submit" class="btn btn-primary">Edit</button>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</div>
+
+@section Scripts
+    {
+    <partial name="_ValidationScriptsPartial" />
+}

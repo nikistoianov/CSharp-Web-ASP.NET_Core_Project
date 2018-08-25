@@ -1,0 +1,54 @@
+﻿@model RoundViewModel
+@{
+    ViewData["Title"] = @Model.Title;
+}
+
+<div class="container-table100 main-container">
+
+    <div class="wrap-table100">
+
+        <div class="table100 ver6">
+            <table data-vertable="ver2">
+
+                <caption class="btn-danger table__title">@Model.Title</caption>
+
+                <thead>
+                    <tr class="row100 head">
+                        <th class="column100 date" data-column="column1">Date</th>
+                        <th class="column100 game" data-column="column1"></th>
+                        <th class="column100" data-column="column1">final result</th>
+                        @Html.DisplayFor(model => model.Users)
+                    </tr>
+                </thead>
+
+                <tbody>
+                    @Html.DisplayFor(model => model.Matches)
+                    
+                    <tr class="row100 footer">
+                        <th class="column100 match" colspan="3">points for current round</th>
+                        @Html.DisplayFor(model => model.RoundPoints)
+                    </tr>
+
+                    <tr class="row100 footer">
+                        <th class="column100 match" colspan="3">bonus points</th>
+                        @Html.DisplayFor(model => model.BonusPoints)
+                    </tr>
+
+                    <tr class="row100 footer-user">
+                        <th class="column100" colspan="3">user</th>
+                        @Html.DisplayFor(model => model.Users)
+                    </tr>
+
+                    <tr class="row100 footer">
+                        <th class="column100 totalmatch" colspan="3">total points</th>
+                        @Html.DisplayFor(model => model.TotalPoints)
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</div>
+</div>
+

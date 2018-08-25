@@ -1,0 +1,36 @@
+﻿@model MatchViewModel
+
+@if (Model.DelimiterText != null)
+{
+    <tr class="row200">
+        <td class="column100 delimiter" colspan="100">@Model.DelimiterText</td>
+    </tr>
+}
+else
+{
+    <tr class="row100">
+        <td class="column100 date" data-column="column1">@Html.DisplayFor(model => model.Date)</td>
+        <td class="column100 game" data-column="column1">@Model.FirstTeam : @Model.SecondTeam</td>
+
+        @if (User.IsInRole(Constants.ROLE_MOD) || User.IsInRole(Constants.ROLE_ADMIN))
+        {
+            @*<td class="column100 game" data-column="column1">
+                <a asp-controller="Matches" asp-action="Edit" asp-route-id="@Model.Id" asp-route-returnUrl="@Context.Request.Path"
+                   class="btn resultbtn game">@Model.FirstTeam : @Model.SecondTeam</a>
+            </td>*@
+            <td class="column100 result totalmatch" data-column="column2">
+                <a asp-controller="Matches" asp-action="EditScore" asp-route-id="@Model.Id" asp-route-returnUrl="@Context.Request.Path"
+                   class="btn resultbtn totalmatch">@Model.Score</a>
+            </td>
+        }
+        else
+        {
+            <td class="column100 result totalmatch" data-column="column2">@Model.Score</td>
+        }
+
+        @Html.DisplayFor(model => model.ScoreBets)
+
+    </tr>
+}
+
+

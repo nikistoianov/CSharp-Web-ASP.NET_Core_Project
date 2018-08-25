@@ -1,0 +1,47 @@
+﻿@model AdminUsersViewModel
+@{
+    ViewData["Title"] = "Users";
+}
+
+<h2>List of users</h2>
+<table class="table table-striped table-hover">
+    <thead>
+        <tr>
+            <th class="col-sm-6">User</th>
+            <th class="col-sm-4">Rights</th>
+            <th class="col-sm-2"></th>
+        </tr>
+    </thead>
+    <tbody class="table__body">
+        @foreach (var user in Model.Users)
+        {
+            <tr>
+                <td>
+                    <a asp-area="" asp-controller="Statistics" asp-action="User" asp-route-id="@(user.Id)">
+                        @user.Name
+                    </a>
+                </td>
+                <td class="text-danger">
+                    @String.Join(", ", user.Roles)
+                </td>
+                <td>
+                    @if (!user.Roles.Contains(Constants.ROLE_ADMIN))
+                    {
+                        @if (!user.Roles.Contains(Constants.ROLE_MOD))
+                        {
+                            <form asp-area="Administration" asp-controller="Users" asp-action="UserToModerator" asp-route-id=@user.Id asp-route-returnUrl="@Url.Action("Index", "Users", new { })" method="post">
+                                <button type="submit" class="btn btn-success">Promote to Moderator</button>
+                            </form>
+                        }
+                        else
+                        {
+                            <form asp-area="Administration" asp-controller="Users" asp-action="ModeratorToUser" asp-route-id=@user.Id asp-route-returnUrl="@Url.Action("Index", "Users", new { })" method="post">
+                                <button type="submit" class="btn btn-danger">Demote to User</button>
+                            </form>
+                        }
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

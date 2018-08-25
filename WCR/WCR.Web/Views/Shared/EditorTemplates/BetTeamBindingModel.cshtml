@@ -1,0 +1,10 @@
+﻿@model BetTeamBindingModel
+
+<div class="form-group">
+    <label asp-for="Name" class="col-sm-4 control-label">@Model.Name</label>
+    <div class="col-sm-7">
+        <input asp-for="Position" class="form-control">
+        <span asp-validation-for="Position" class="text-danger"></span>
+        <input asp-for="TeamId" type="hidden" class="form-control">
+    </div>
+</div>

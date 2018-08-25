@@ -1,0 +1,23 @@
+﻿@model UserStatViewModel
+
+<div class="container container-details body-content table__body span=8 offset=2">
+    <div class="well table__body">
+        <form class="form-horizontal navbar__title" method="post">
+            <fieldset>
+                <legend>Statistics for participant: @Model.ShortName</legend>
+                <div class="form-group">
+                    <label class="col-sm-7 control-label">Email</label>
+                    <div class="col-sm-4 control-label">@Model.Email</div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-7 control-label">Prognosises for matches</label>
+                    <div class="col-sm-4 control-label">@Model.BetsMatch</div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-7 control-label">Prognosises for group positions</label>
+                    <div class="col-sm-4 control-label">@Model.BetsTeam</div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</div>

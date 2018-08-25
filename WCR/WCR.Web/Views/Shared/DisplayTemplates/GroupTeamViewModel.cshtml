@@ -1,0 +1,8 @@
+﻿@model GroupTeamViewModel
+
+<tr class="row100">
+    <td class="column100 game" data-column="column1">@Model.TeamName</td>
+    <td class="column100 result totalmatch">@Model.Position</td>
+    @Html.DisplayFor(model => model.Bets)
+</tr>
+

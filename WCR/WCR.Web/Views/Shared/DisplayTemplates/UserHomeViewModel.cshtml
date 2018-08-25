@@ -1,0 +1,5 @@
+﻿@model UserHomeViewModel
+
+<li>
+    <a asp-controller="Statistics" asp-action="User" asp-route-id="@Model.Id">@Model.ShortName (@Model.Email)</a>
+</li>

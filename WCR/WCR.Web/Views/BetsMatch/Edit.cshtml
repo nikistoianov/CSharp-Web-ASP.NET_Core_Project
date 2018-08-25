@@ -1,0 +1,40 @@
+﻿@model BetMatchBindingModel
+@{
+    ViewData["Title"] = "Create Bet";
+}
+
+<div class="container container-details body-content table__body span=8 offset=2">
+    <div class="well">
+        <form class="form-horizontal navbar__title" method="post">
+            <fieldset>
+                <legend>Edit Prognosis</legend>
+
+                <div class="form-group">
+                    <label asp-for="HomeTeam" class="col-sm-4 control-label">@Model.HomeTeam</label>
+                    <div class="col-sm-7">
+                        <input asp-for="HomeTeamGoals" class="form-control">
+                        <span asp-validation-for="HomeTeamGoals" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label asp-for="GuestTeam" class="col-sm-4 control-label">@Model.GuestTeam</label>
+                    <div class="col-sm-7">
+                        <input asp-for="GuestTeamGoals" class="form-control">
+                        <span asp-validation-for="GuestTeamGoals" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-7 col-sm-offset-4">
+                        <a href="@Context.Request.Query["returnUrl"]" class="btn btn-default">Cancel</a>
+                        <button type="submit" class="btn btn-primary">Edit</button>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</div>
+
+@section Scripts
+{
+<partial name="_ValidationScriptsPartial" />
+}
